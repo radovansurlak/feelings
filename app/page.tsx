@@ -71,17 +71,13 @@ export default function Home() {
 					title: "My Feelings",
 					text: shareText,
 				});
-				alert("Feelings shared successfully!");
 			} catch (error: unknown) {
-				alert("Sharing failed. Please try again.");
 				console.log({ error });
 			}
 		} else if (navigator.clipboard) {
 			try {
 				await navigator.clipboard.writeText(shareText);
-				alert("Feelings copied to clipboard!");
 			} catch (error: unknown) {
-				alert("Failed to copy to clipboard. Please try again.");
 				console.log({ error });
 			}
 		} else {
@@ -173,10 +169,10 @@ export default function Home() {
 						))}
 					</div>
 					<button
-						className="btn btn-block btn-lg btn-primary"
+						className="btn btn-block btn-lg mb-6 btn-primary"
 						onClick={shareFeelings}
 					>
-						Share with Partner
+						Share ❤️
 					</button>
 				</>
 			)}
