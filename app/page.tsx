@@ -117,7 +117,7 @@ export default function Home() {
 								return (
 									<span
 										key={feeling}
-										className={`btn btn-lg font-normal ${
+										className={`btn font-normal btn- ${
 											isSelected
 												? "btn-active btn-secondary shadow-xl"
 												: ""
@@ -140,13 +140,22 @@ export default function Home() {
 			{selectedFeelings.length > 0 && (
 				<>
 					<div className="card bg-base-100 p-10 mx-6 mb-6 shadow-xl flex flex-col align-center">
-						<h3 className="text-center text-xl font-normal mb-6">Selected Feelings</h3>
+						<h3 className="text-center text-xl font-normal mb-6">
+							Selected Feelings
+						</h3>
 						{selectedFeelings.map((selectedFeeling) => (
 							<div
-                className="mb-4"
+								className="mb-4"
 								key={`${selectedFeeling.category}-${selectedFeeling.feeling}`}
 							>
-								<span className="block mb-2">{selectedFeeling.feeling}</span>
+								<div className="flex justify-between">
+									<span className="block mb-2">
+										{selectedFeeling.feeling}
+									</span>
+									<span className="block mb-2">
+										{selectedFeeling.intensity}
+									</span>
+								</div>
 								<input
 									type="range"
 									min={1}
@@ -163,7 +172,10 @@ export default function Home() {
 							</div>
 						))}
 					</div>
-					<button className="btn btn-block btn-lg mx-6 mb-2 btn-primary" onClick={shareFeelings}>
+					<button
+						className="btn btn-block btn-lg mx-6 mb-2 btn-primary"
+						onClick={shareFeelings}
+					>
 						Share with Partner
 					</button>
 				</>
