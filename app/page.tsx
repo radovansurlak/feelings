@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import { feelingsCategories } from "./data/feelings";
-
-type SelectedFeeling = {
-	category: string;
-	feeling: string;
-	intensity: number;
-};
+import { SelectedFeeling } from "./types";
 
 export default function Home() {
 	const [selectedFeelings, setSelectedFeelings] = useState<SelectedFeeling[]>(
@@ -101,11 +96,11 @@ export default function Home() {
 					"radial-gradient(circle, rgba(63,94,251,0.5214679621848739) 0%, rgba(252,70,107,0.675529586834734) 100%);",
 			}}
 		>
-			<div className="flex flex-wrap gap-8 justify-center py-20">
+			<div className="flex flex-wrap p-8 gap-8 justify-center py-20">
 				{feelingsCategories.map((categoryObj) => (
 					<div
 						key={categoryObj.category}
-						className="card bg-base-100 w-96 shadow-xl p-10"
+						className="card bg-base-100 w-96 shadow-xl p-6"
 					>
 						<h3 className="mb-4 text-center text-xl">
 							{categoryObj.category}
