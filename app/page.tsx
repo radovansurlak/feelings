@@ -93,10 +93,10 @@ export default function Home() {
 		<div
 			style={{
 				background:
-					"radial-gradient(circle, rgba(63,94,251,0.5214679621848739) 0%, rgba(252,70,107,0.675529586834734) 100%);",
+					"radial-gradient(circle, rgba(63,94,251,0.5214679621848739) 0%, rgba(252,70,107,0.675529586834734) 100%)",
 			}}
 		>
-			<div className="flex flex-wrap p-8 gap-8 justify-center py-20">
+			<div className="flex flex-wrap p-6 gap-8 justify-center py-20">
 				{feelingsCategories.map((categoryObj) => (
 					<div
 						key={categoryObj.category}
@@ -105,7 +105,7 @@ export default function Home() {
 						<h3 className="mb-4 text-center text-xl">
 							{categoryObj.category}
 						</h3>
-						<div className="grid grid-cols-auto gap-2">
+						<div className="grid grid-cols-auto gap-4">
 							{categoryObj.feelings.map((feeling) => {
 								const isSelected = selectedFeelings.some(
 									(selectedFeeling) =>
@@ -117,7 +117,7 @@ export default function Home() {
 								return (
 									<span
 										key={feeling}
-										className={`btn font-normal ${
+										className={`btn btn-lg font-normal ${
 											isSelected
 												? "btn-active btn-secondary shadow-xl"
 												: ""
@@ -139,8 +139,8 @@ export default function Home() {
 			</div>
 			{selectedFeelings.length > 0 && (
 				<>
-					<div className="card bg-base-100 p-10 mx-10 mb-6 shadow-xl flex flex-col align-center">
-						<h3 className="text-center">Selected Feelings</h3>
+					<div className="card bg-base-100 p-10 mx-6 mb-6 shadow-xl flex flex-col align-center">
+						<h3 className="text-center text-xl font-normal mb-6">Selected Feelings</h3>
 						{selectedFeelings.map((selectedFeeling) => (
 							<div
                 className="mb-4"
@@ -151,7 +151,7 @@ export default function Home() {
 									type="range"
 									min={1}
 									max={10}
-									className="range range-"
+									className="range range-lg"
 									value={selectedFeeling.intensity}
 									onChange={(event) =>
 										handleFeelingIntensityChange(
@@ -163,7 +163,7 @@ export default function Home() {
 							</div>
 						))}
 					</div>
-					<button className="btn btn-block" onClick={shareFeelings}>
+					<button className="btn btn-block btn-lg mx-6 mb-2 btn-primary" onClick={shareFeelings}>
 						Share with Partner
 					</button>
 				</>
