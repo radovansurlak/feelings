@@ -7,6 +7,9 @@ export default {
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
-  lightMode: 'selector',
+	lightMode: "selector",
 	plugins: [daisyui],
+	daisyui: {
+		themes: ["light"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+	},
 } satisfies Config;
