@@ -173,7 +173,7 @@ export default function Home() {
 						))}
 					</div>
 					<button
-						className="btn btn-block btn-lg mx-6 mb-2 btn-primary"
+						className="btn btn-block btn-lg btn-primary"
 						onClick={shareFeelings}
 					>
 						Share with Partner
