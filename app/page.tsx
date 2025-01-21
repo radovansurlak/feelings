@@ -118,6 +118,13 @@ export default function Home() {
 												? "btn-active btn-secondary shadow-xl"
 												: ""
 										}`}
+										style={{
+											background: isSelected
+												? "linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,0.5) 100%)"
+												: "",
+											border: "none",
+                      // transition: "background 0.2s ease-in-out",
+										}}
 										onClick={() =>
 											toggleFeeling(
 												categoryObj.category,
