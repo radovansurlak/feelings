@@ -117,7 +117,7 @@ export default function Home() {
 										className="flex w-full"
 									>
 										<span
-											className={`btn font-normal flex-1 mr-2 btn- ${
+											className={`btn font-normal flex-1 mr-2 select-none  ${
 												isSelected
 													? "btn-active btn-secondary shadow-xl"
 													: ""
