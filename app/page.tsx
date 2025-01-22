@@ -105,35 +105,83 @@ export default function Home() {
 							{categoryObj.feelings.map((feeling) => {
 								const isSelected = selectedFeelings.some(
 									(selectedFeeling) =>
-										selectedFeeling.feeling === feeling &&
+										selectedFeeling.feeling ===
+											feeling.name &&
 										selectedFeeling.category ===
 											categoryObj.category
 								);
 
 								return (
-									<span
-										key={feeling}
-										className={`btn font-normal btn- ${
-											isSelected
-												? "btn-active btn-secondary shadow-xl"
-												: ""
-										}`}
-										style={{
-											background: isSelected
-												? "linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,0.5) 100%)"
-												: "",
-											border: "none",
-                      // transition: "background 0.2s ease-in-out",
-										}}
-										onClick={() =>
-											toggleFeeling(
-												categoryObj.category,
-												feeling
-											)
-										}
+									<div
+										key={feeling.name}
+										className="flex w-full"
 									>
-										{feeling}
-									</span>
+										<span
+											className={`btn font-normal flex-1 mr-2 btn- ${
+												isSelected
+													? "btn-active btn-secondary shadow-xl"
+													: ""
+											}`}
+											style={{
+												background: isSelected
+													? "linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,0.5) 100%)"
+													: "",
+												border: "none",
+											}}
+											onClick={() =>
+												toggleFeeling(
+													categoryObj.category,
+													feeling.name
+												)
+											}
+										>
+											{feeling.name}
+										</span>
+										<button
+											className="btn btn-circle"
+											onClick={() => {
+												document
+													.getElementById(
+														`feeling-modal-${feeling.name}`
+													)
+													.showModal();
+											}}
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												strokeWidth={1.5}
+												stroke="currentColor"
+												className="size-6"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+												/>
+											</svg>
+										</button>
+										<dialog
+											id={`feeling-modal-${feeling.name}`}
+											className="modal"
+										>
+											<div className="modal-box">
+												<form method="dialog">
+													{/* if there is a button in form, it will close the modal */}
+													<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+														✕
+													</button>
+												</form>
+												<h3 className="font-bold text-lg">
+													{feeling.name}
+												</h3>
+												<p className="py-4">
+													{feeling.description}
+												</p>
+											</div>
+										</dialog>
+									</div>
 								);
 							})}
 						</div>
