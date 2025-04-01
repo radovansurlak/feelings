@@ -1,688 +1,625 @@
-type FeelingCategory = {
-	category: string;
-	feelings: { name: string; description: string }[];
-};
-
 export const feelingsCategories: FeelingCategory[] = [
-	{
-		category: "Affectionate",
-		feelings: [
-			{
-				name: "Compassionate",
-				description:
-					"Feeling or showing sympathy and concern for others.",
-			},
-			{
-				name: "Friendly",
-				description: "Being kind and pleasant to others.",
-			},
-			{
-				name: "Loving",
-				description:
-					"Feeling or showing deep affection and care for someone.",
-			},
-			{
-				name: "Open-hearted",
-				description: "Being candid and sincere in expression.",
-			},
-			{
-				name: "Sympathetic",
-				description:
-					"Showing understanding and sharing in another's feelings.",
-			},
-			{
-				name: "Tender",
-				description: "Showing gentleness and concern or sympathy.",
-			},
-			{
-				name: "Touched",
-				description: "Emotionally affected by something.",
-			},
-			{
-				name: "Warm",
-				description: "Displaying affection, kindness, and cordiality.",
-			},
-		],
-	},
-	{
-		category: "Inspired",
-		feelings: [
-			{
-				name: "Amazed",
-				description: "Feeling great surprise or wonder."
-			},
-			{
-				name: "Awed",
-				description: "Having a feeling of reverential respect mixed with fear or wonder."
-			},
-			{
-				name: "Wonder",
-				description: "A feeling of amazement and admiration, caused by something beautiful, remarkable, or unfamiliar."
-			},
-		],
-	},
-	{
-		category: "Engaged",
-		feelings: [
-			{
-				name: "Absorbed",
-				description: "Deeply interested or involved; engrossed."
-			},
-			{
-				name: "Alert",
-				description: "Quick to notice any unusual and potentially dangerous or difficult circumstances."
-			},
-			{
-				name: "Curious",
-				description: "Eager to know or learn something."
-			},
-			{
-				name: "Engrossed",
-				description: "Having all one's attention or interest absorbed by someone or something."
-			},
-			{
-				name: "Enchanted",
-				description: "Filled with delight; charmed."
-			},
-			{
-				name: "Entranced",
-				description: "Filled with wonder and delight, holding their entire attention."
-			},
-			{
-				name: "Fascinated",
-				description: "Strongly attracted and interested."
-			},
-			{
-				name: "Interested",
-				description: "Showing curiosity or concern about something or someone."
-			},
-			{
-				name: "Intrigued",
-				description: "Aroused the curiosity or interest of; fascinated."
-			},
-			{
-				name: "Involved",
-				description: "Engaged in or connected with a situation or activity."
-			},
-			{
-				name: "Spellbound",
-				description: "Holding someone's complete attention as though by magic."
-			},
-			{
-				name: "Stimulated",
-				description: "Raised levels of physiological or nervous activity in the body or any biological system."
-			},
-		],
-	},
-	{
-		category: "Excited",
-		feelings: [
-			{
-				name: "Alive",
-				description: "Full of energy and enthusiasm."
-			},
-			{
-				name: "Amazed",
-				description: "Extremely surprised or impressed."
-			},
-			{
-				name: "Animated",
-				description: "Full of life and enthusiasm."
-			},
-			{
-				name: "Ardent",
-				description: "Showing a strong and barely controllable emotion."
-			},
-			{
-				name: "Aroused",
-				description: "Feeling or showing excitement or interest."
-			},
-			{
-				name: "Astonished",
-				description: "Extremely surprised or shocked."
-			},
-			{
-				name: "Dazzled",
-				description: "Extremely impressed or surprised."
-			},
-			{
-				name: "Eager",
-				description: "Feeling or showing enthusiasm and interest."
-			},
-			{
-				name: "Energetic",
-				description: "Having or showing a lot of energy and enthusiasm."
-			},
-			{
-				name: "Enthusiastic",
-				description: "Feeling or showing intense excitement and interest."
-			},
-			{
-				name: "Giddy",
-				description: "Feeling or showing a silly or playful excitement."
-			},
-			{
-				name: "Invigorated",
-				description: "Feeling refreshed and full of energy."
-			},
-			{
-				name: "Lively",
-				description: "Full of energy and enthusiasm."
-			},
-			{
-				name: "Passionate",
-				description: "Showing a strong and barely controllable emotion."
-			},
-			{
-				name: "Surprised",
-				description: "Extremely surprised or shocked."
-			},
-			{
-				name: "Vibrant",
-				description: "Full of energy and enthusiasm."
-			},
-		],
-	},
-	{
-		category: "Hopeful",
-		feelings: [
-			{
-				name: "Expectant",
-				description: "Having a feeling of expectation or anticipation."
-			},
-			{
-				name: "Encouraged",
-				description: "Having a feeling of optimism or confidence."
-			},
-			{
-				name: "Optimistic",
-				description: "Having a positive outlook on life."
-			},
-		],
-	},
-	{
-		category: "Confident",
-		feelings: [
-			{
-				name: "Empowered",
-				description: "Feeling confident and in control."
-			},
-			{
-				name: "Open",
-				description: "Having a feeling of trust or openness."
-			},
-			{
-				name: "Proud",
-				description: "Feeling a sense of accomplishment or pride."
-			},
-			{
-				name: "Safe",
-				description: "Feeling protected or secure."
-			},
-			{
-				name: "Secure",
-				description: "Feeling confident or free from fear."
-			},
-		],
-	},
-	{
-		category: "Refreshed",
-		feelings: [
-			{
-				name: "Awake",
-				description: "Feeling alert and awake."
-			},
-			{
-				name: "Enlivened",
-				description: "Feeling refreshed and full of energy."
-			},
-			{
-				name: "Rejuvenated",
-				description: "Feeling restored to a more youthful or vigorous state."
-			},
-			{
-				name: "Renewed",
-				description: "Feeling restored to a more youthful or vigorous state."
-			},
-			{
-				name: "Rested",
-				description: "Feeling refreshed and full of energy."
-			},
-			{
-				name: "Restored",
-				description: "Feeling restored to a more youthful or vigorous state."
-			},
-			{
-				name: "Revived",
-				description: "Feeling refreshed and full of energy."
-			},
-		],
-	},
-	{
-		category: "Peaceful",
-		feelings: [
-			{
-				name: "Calm",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Clear headed",
-				description: "Feeling mentally clear and focused."
-			},
-			{
-				name: "Comfortable",
-				description: "Feeling physically or emotionally at ease."
-			},
-			{
-				name: "Centered",
-				description: "Feeling mentally or emotionally stable."
-			},
-			{
-				name: "Content",
-				description: "Feeling satisfied or pleased."
-			},
-			{
-				name: "Equanimous",
-				description: "Feeling mentally or emotionally stable."
-			},
-			{
-				name: "Fulfilled",
-				description: "Feeling satisfied or pleased."
-			},
-			{
-				name: "Mellow",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Quiet",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Relaxed",
-				description: "Feeling physically or emotionally at ease."
-			},
-			{
-				name: "Relieved",
-				description: "Feeling happy or reassured that something unpleasant has not happened or has ended."
-			},
-			{
-				name: "Satisfied",
-				description: "Feeling pleased or content."
-			},
-			{
-				name: "Serene",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Still",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Tranquil",
-				description: "Feeling or showing a lack of disturbance or turmoil."
-			},
-			{
-				name: "Trusting",
-				description: "Feeling confident or secure."
-			},
-		],
-	},
+	// Positive - High Energy
 	{
 		category: "Joyful",
 		feelings: [
 			{
-				name: "Amazed",
-				description: "Extremely surprised or impressed."
-			},
-			{
-				name: "Amused",
-				description: "Feeling entertained or amused."
-			},
-			{
-				name: "Delighted",
-				description: "Feeling a great deal of pleasure or enjoyment."
-			},
-			{
-				name: "Glad",
-				description: "Feeling happy or pleased."
-			},
-			{
 				name: "Happy",
-				description: "Feeling happy or pleased."
+				description: "Feeling or showing pleasure or contentment.",
 			},
 			{
-				name: "Jubilant",
-				description: "Feeling or showing great joy or triumph."
+				name: "Joyful",
+				description:
+					"Feeling, expressing, or causing great pleasure and happiness.",
+			},
+			{
+				name: "Content",
+				description: "In a state of peaceful satisfaction.",
 			},
 			{
 				name: "Pleased",
-				description: "Feeling happy or pleased."
+				description:
+					"Feeling or showing pleasure and satisfaction, especially at an event or a situation.",
+			}, // Note: Added 'Pleased' as it fits well, though not explicitly in the original list unless covered by Happy/Content. Assuming it's implicitly covered or a useful addition.
+			{
+				name: "Playful",
+				description: "Fond of games and amusement; lighthearted.",
+			},
+			{
+				name: "Cheeky",
+				description: "Playfully mischievous or amusing.",
+			},
+			{
+				name: "Free",
+				description: "Feeling liberated and unconstrained.",
 			},
 		],
 	},
 	{
-		category: "Exhilarated",
+		category: "Engaged", // Renamed from Inspired to be broader
 		feelings: [
 			{
-				name: "Empowered",
-				description: "Feeling confident and in control."
+				name: "Inspired",
+				description:
+					"Feeling mentally stimulated to do or feel something, especially creative.",
 			},
 			{
-				name: "Blissful",
-				description: "Feeling extremely happy or joyful."
+				name: "Hopeful",
+				description:
+					"Feeling or inspiring optimism about a future event.",
 			},
 			{
-				name: "Delighted",
-				description: "Feeling a great deal of pleasure or enjoyment."
+				name: "Optimistic",
+				description: "Hopeful and confident about the future.",
 			},
 			{
-				name: "Ecstatic",
-				description: "Feeling extremely happy or joyful."
+				name: "Interested",
+				description:
+					"Showing curiosity or concern about something or someone.",
+			},
+			{ name: "Inquisitive", description: "Curious or inquiring." },
+			{
+				name: "Curious",
+				description: "Eager to know or learn something.",
 			},
 			{
-				name: "Elated",
-				description: "Feeling extremely happy or joyful."
+				name: "Excited",
+				description: "Feeling very enthusiastic and eager.",
 			},
 			{
-				name: "Enthralled",
-				description: "Feeling extremely happy or joyful."
+				name: "Energetic",
+				description: "Showing or involving great activity or vitality.",
 			},
 			{
-				name: "Exuberant",
-				description: "Feeling extremely happy or joyful."
-			},
-			{
-				name: "Radiant",
-				description: "Feeling extremely happy or joyful."
-			},
-			{
-				name: "Rapturous",
-				description: "Feeling extremely happy or joyful."
-			},
-			{
-				name: "Thrilled",
-				description: "Feeling extremely happy or joyful."
+				name: "Eager",
+				description: "Strongly wanting to do or have something.",
 			},
 		],
 	},
 	{
-		category: "Grateful",
+		category: "Proud / Confident",
 		feelings: [
 			{
-				name: "Appreciative",
-				description: "Feeling thankful for something or someone."
+				name: "Powerful",
+				description: "Having great power or strength.",
 			},
 			{
-				name: "Moved",
-				description: "Feeling strongly emotionally affected by something."
+				name: "Creative",
+				description:
+					"Relating to or involving the imagination or original ideas.",
+			},
+			{
+				name: "Courageous",
+				description: "Not deterred by danger or pain; brave.",
+			},
+			{
+				name: "Accepted",
+				description: "Regarded as normal, valid, or acceptable.",
+			},
+			{
+				name: "Valued",
+				description:
+					"Considered to be important or beneficial; cherished.",
+			},
+			{
+				name: "Respected",
+				description:
+					"Deeply admired for abilities, qualities, or achievements.",
+			},
+			{
+				name: "Proud",
+				description:
+					"Feeling deep pleasure or satisfaction as a result of one's own achievements, qualities, or possessions or those of someone with whom one is closely associated.",
+			},
+			{
+				name: "Confident",
+				description: "Feeling or showing certainty about something.",
+			},
+			{
+				name: "Successful",
+				description:
+					"Having achieved desired aims or attained prosperity.",
+			},
+		],
+	},
+	// Positive - Low Energy
+	{
+		category: "Peaceful",
+		feelings: [
+			{
+				name: "Trusting",
+				description:
+					"Inclined to believe in the reliability, truth, ability, or strength of someone or something.",
+			},
+			{
+				name: "Intimate",
+				description: "Feeling closely acquainted; familiar, close.",
+			}, // Note: 'Intimate' could also fit Affectionate.
+			{
+				name: "Sensitive",
+				description:
+					"Quick to detect or respond to slight changes, signals, or influences; easily affected emotionally.",
+			}, // Can be positive or negative context.
+			{
+				name: "Peaceful",
+				description: "Free from disturbance; tranquil.",
 			},
 			{
 				name: "Thankful",
-				description: "Feeling appreciative for something or someone."
+				description: "Pleased and relieved; expressing gratitude.",
 			},
 			{
-				name: "Touched",
-				description: "Feeling emotionally affected by something."
+				name: "Loving",
+				description: "Feeling or showing deep affection or care.",
 			},
 		],
 	},
+	// Negative - Fear
 	{
-		category: "Afraid",
+		category: "Fearful",
 		feelings: [
 			{
-				name: "Foreboding",
-				description: "Having a feeling of fear and worry about the future."
+				name: "Fearful",
+				description: "Feeling afraid; showing fear or anxiety.",
+			},
+			{ name: "Scared", description: "Fearful; frightened." },
+			{ name: "Frightened", description: "Afraid or anxious." },
+			{
+				name: "Threatened",
+				description:
+					"Feeling endangered or vulnerable due to potential hostility or harm.",
 			},
 			{
-				name: "Frightened",
-				description: "Feeling scared or terrified."
+				name: "Insecure",
+				description:
+					"Uncertain or anxious about oneself; not confident.",
 			},
 			{
-				name: "Mistrustful",
-				description: "Feeling suspicious or wary of someone or something."
+				name: "Weak",
+				description:
+					"Lacking physical strength and energy; easily broken or damaged.",
+			}, // Often linked to fear/vulnerability
+		],
+	},
+	{
+		category: "Anxious / Overwhelmed",
+		feelings: [
+			{
+				name: "Anxious",
+				description:
+					"Experiencing worry, unease, or nervousness, typically about an imminent event or something with an uncertain outcome.",
 			},
 			{
-				name: "Panicked",
-				description: "Feeling extremely anxious or frightened."
-			},
-			{
-				name: "Petrified",
-				description: "Feeling extremely scared or terrified."
-			},
-			{
-				name: "Scared",
-				description: "Feeling frightened or fearful."
-			},
-			{
-				name: "Suspicious",
-				description: "Feeling suspicious or wary of someone or something."
-			},
-			{
-				name: "Terrified",
-				description: "Feeling extremely scared or terrified."
-			},
-			{
-				name: "Wary",
-				description: "Feeling cautious or suspicious."
+				name: "Overwhelmed",
+				description:
+					"Feeling buried or drowned beneath a huge mass of something, especially emotions or work.",
 			},
 			{
 				name: "Worried",
-				description: "Feeling anxious or concerned about something."
+				description:
+					"Feeling anxious or troubled about actual or potential problems.",
+			},
+			{
+				name: "Nervous",
+				description:
+					"Easily agitated or alarmed; tending to be anxious.",
+			},
+			{
+				name: "Stressed",
+				description: "Feeling worried or unable to relax.",
+			},
+			{
+				name: "Out of control",
+				description:
+					"Feeling unable to manage events or one's own behavior.",
+			},
+			{
+				name: "Busy",
+				description:
+					"Feeling occupied with activity; having a great deal to do.",
+			}, // Often leads to stress
+			{
+				name: "Rushed",
+				description: "Feeling forced to act with undue haste.",
+			},
+			{
+				name: "Pressured",
+				description:
+					"Feeling constrained or forced by urgency or demands.",
 			},
 		],
 	},
+	// Negative - Vulnerability / Inadequacy
 	{
-		category: "Confused",
+		category: "Vulnerable / Inadequate",
 		feelings: [
 			{
-				name: "Ambivalent",
-				description: "Having mixed feelings about something."
+				name: "Helpless",
+				description: "Unable to defend oneself or to act without help.",
 			},
 			{
-				name: "Baffled",
-				description: "Feeling confused or perplexed."
+				name: "Inadequate",
+				description:
+					"Lacking the quality or quantity required; insufficient for a purpose.",
 			},
 			{
-				name: "Bewildered",
-				description: "Feeling confused or lost."
+				name: "Inferior",
+				description: "Feeling lower in rank, status, or quality.",
 			},
 			{
-				name: "Dazed",
-				description: "Feeling confused or disoriented."
+				name: "Worthless",
+				description:
+					"Having no real value or use; feeling without value.",
 			},
 			{
-				name: "Hesitant",
-				description: "Feeling uncertain or indecisive."
+				name: "Insignificant",
+				description:
+					"Feeling too small or unimportant to be worth consideration.",
 			},
 			{
-				name: "Lost",
-				description: "Feeling confused or uncertain about what to do."
+				name: "Powerless",
+				description: "Without ability, influence, or power.",
 			},
 			{
-				name: "Mystified",
-				description: "Feeling confused or puzzled by something."
+				name: "Vulnerable",
+				description:
+					"Feeling susceptible to physical or emotional attack or harm.",
 			},
 			{
-				name: "Perplexed",
-				description: "Feeling confused or puzzled by something."
+				name: "Fragile",
+				description: "Feeling easily broken or damaged; delicate.",
 			},
 			{
-				name: "Puzzled",
-				description: "Feeling confused or puzzled by something."
+				name: "Exposed",
+				description: "Feeling unprotected or vulnerable.",
 			},
 			{
-				name: "Torn",
-				description: "Feeling conflicted or uncertain about something."
-			},
+				name: "Victimised",
+				description:
+					"Feeling singled out for cruel or unjust treatment.",
+			}, // Spelled 'Victimized' in US English
 		],
 	},
+	// Negative - Rejection / Loneliness
 	{
-		category: "Disconnected",
+		category: "Rejected / Lonely",
 		feelings: [
 			{
-				name: "Alienated",
-				description: "Feeling disconnected or isolated from others."
+				name: "Rejected",
+				description:
+					"Feeling dismissed as inadequate, inappropriate, or not to one's taste.",
 			},
 			{
-				name: "Aloof",
-				description: "Feeling distant or detached from others."
+				name: "Excluded",
+				description:
+					"Feeling denied access to or barred from a place, group, or privilege.",
 			},
 			{
-				name: "Apathetic",
-				description: "Feeling uninterested or indifferent to something."
+				name: "Lonely",
+				description: "Sad because one has no friends or company.",
 			},
 			{
-				name: "Bored",
-				description: "Feeling uninterested or uninspired by something."
+				name: "Isolated",
+				description:
+					"Feeling far away from other places, buildings, or people; remote.",
 			},
 			{
-				name: "Detached",
-				description: "Feeling disconnected or separate from something or someone."
+				name: "Abandoned",
+				description: "Feeling deserted or left behind.",
 			},
 			{
 				name: "Distant",
-				description: "Feeling disconnected or separate from something or someone."
-			},
-			{
-				name: "Distracted",
-				description: "Feeling disconnected or separate from something or someone."
-			},
-			{
-				name: "Indifferent",
-				description: "Feeling uninterested or uncaring about something."
-			},
-			{
-				name: "Numb",
-				description: "Feeling disconnected or separate from something or someone."
-			},
-			{
-				name: "Uninterested",
-				description: "Feeling uninterested or uninspired by something."
+				description: "Feeling reserved or uncommunicative.",
 			},
 			{
 				name: "Withdrawn",
-				description: "Feeling disconnected or separate from something or someone."
+				description: "Not wanting to communicate with other people.",
 			},
 		],
 	},
-	{
-		category: "Sad",
-		feelings: [
-			{
-				name: "Depressed",
-				description: "Feeling sad, hopeless, or disheartened."
-			},
-			{
-				name: "Despair",
-				description: "Feeling hopeless or helpless."
-			},
-			{
-				name: "Despondent",
-				description: "Feeling sad, hopeless, or disheartened."
-			},
-			{
-				name: "Disappointed",
-				description: "Feeling sad or unhappy because of something that has happened."
-			},
-			{
-				name: "Discouraged",
-				description: "Feeling sad or unhappy because of something that has happened."
-			},
-			{
-				name: "Disheartened",
-				description: "Feeling sad or unhappy because of something that has happened."
-			},
-			{
-				name: "Gloomy",
-				description: "Feeling sad or unhappy about the future."
-			},
-			{
-				name: "Heavy hearted",
-				description: "Feeling sad or unhappy about something."
-			},
-			{
-				name: "Hopeless",
-				description: "Feeling sad or unhappy about the future."
-			},
-			{
-				name: "Melancholy",
-				description: "Feeling sad or unhappy about something."
-			},
-			{
-				name: "Unhappy",
-				description: "Feeling sad or unhappy about something."
-			},
-			{
-				name: "Wretched",
-				description: "Feeling sad or unhappy about something."
-			},
-		],
-	},
-	{
-		category: "Annoyed",
-		feelings: [
-			{
-				name: "Aggravated",
-				description: "Feeling annoyed or frustrated by something."
-			},
-			{
-				name: "Dismayed",
-				description: "Feeling unhappy or disappointed about something."
-			},
-			{
-				name: "Disgruntled",
-				description: "Feeling unhappy or dissatisfied with something."
-			},
-			{
-				name: "Displeased",
-				description: "Feeling unhappy or dissatisfied with something."
-			},
-			{
-				name: "Exasperated",
-				description: "Feeling extremely frustrated or annoyed."
-			},
-			{
-				name: "Frustrated",
-				description:
-					"Feeling annoyed or disappointed when unable to do or achieve something.",
-			},
-			{
-				name: "Impatient",
-				description: "Feeling annoyed or irritated when waiting for something.",
-			},
-			{
-				name: "Irritated",
-				description: "Feeling annoyed or bothered by something.",
-			},
-		],
-	},
+	// Negative - Anger
 	{
 		category: "Angry",
 		feelings: [
 			{
-				name: "Enraged",
-				description: "Feeling extremely angry or furious."
-			},
-			{
-				name: "Furious",
-				description: "Feeling extremely angry or enraged."
-			},
-			{
-				name: "Incensed",
-				description: "Feeling extremely angry or outraged."
-			},
-			{
-				name: "Irate",
-				description: "Feeling extremely angry or enraged."
-			},
-			{
-				name: "Outraged",
-				description: "Feeling extremely angry or shocked about something."
+				name: "Angry",
+				description:
+					"Feeling or showing strong annoyance, displeasure, or hostility.",
 			},
 			{
 				name: "Resentful",
-				description: "Feeling bitter or indignant about something."
+				description:
+					"Feeling or expressing bitterness or indignation at having been treated unfairly.",
+			},
+			{
+				name: "Bitter",
+				description:
+					"Feeling anger, hurt, or resentment because of bad experiences or unjust treatment.",
+			},
+			{
+				name: "Indignant",
+				description:
+					"Feeling or showing anger or annoyance at what is perceived as unfair treatment.",
+			},
+			{
+				name: "Violated",
+				description:
+					"Feeling that one's rights, privacy, or sense of self has been transgressed.",
+			},
+			{ name: "Mad", description: "Very angry." },
+			{ name: "Furious", description: "Extremely angry." },
+			{
+				name: "Jealous",
+				description:
+					"Feeling or showing envy of someone or their achievements and advantages, or protective/anxious about one's own.",
+			},
+			{
+				name: "Aggressive",
+				description: "Ready or likely to attack or confront.",
+			},
+			{
+				name: "Provoked",
+				description: "Feeling stirred to anger or annoyance.",
+			},
+			{
+				name: "Hostile",
+				description:
+					"Showing or feeling opposition or dislike; unfriendly.",
+			},
+			{
+				name: "Frustrated",
+				description:
+					"Feeling or expressing distress and annoyance, especially because of inability to change or achieve something.",
+			},
+			{
+				name: "Infuriated",
+				description: "Feeling extremely angry and impatient.",
+			},
+			{ name: "Annoyed", description: "Slightly angry; irritated." },
+		],
+	},
+	{
+		category: "Hurt / Disrespected", // Feelings often caused *by* others' actions
+		feelings: [
+			{
+				name: "Let down",
+				description:
+					"Feeling disappointed by someone's failure to fulfill an expectation or promise.",
+			},
+			{
+				name: "Betrayed",
+				description: "Feeling harmed by someone's disloyalty.",
+			},
+			{
+				name: "Humiliated",
+				description: "Feeling ashamed or foolish, especially publicly.",
+			},
+			{
+				name: "Disrespected",
+				description: "Feeling a lack of respect or courtesy.",
+			},
+			{
+				name: "Ridiculed",
+				description:
+					"Feeling subjected to dismissive language or behavior.",
+			},
+			{
+				name: "Persecuted",
+				description:
+					"Feeling subjected to hostility and ill-treatment, especially because of race or political or religious beliefs.",
 			},
 		],
 	},
+	// Negative - Disgust
+	{
+		category: "Disgusted / Critical",
+		feelings: [
+			{
+				name: "Critical",
+				description:
+					"Expressing adverse or disapproving comments or judgments.",
+			},
+			{
+				name: "Sceptical",
+				description:
+					"Not easily convinced; having doubts or reservations.",
+			}, // Spelled 'Skeptical' in US English
+			{
+				name: "Dismissive",
+				description:
+					"Feeling or showing that something is unworthy of consideration.",
+			},
+			{
+				name: "Disgusted",
+				description:
+					"Feeling profound disapproval accompanied by revulsion.",
+			},
+			{
+				name: "Disapproving",
+				description: "Expressing an unfavorable opinion.",
+			},
+			{
+				name: "Judgmental",
+				description: "Displaying an overly critical point of view.",
+			},
+			{
+				name: "Condemned",
+				description: "Feeling strongly disapproved of.",
+			},
+			{
+				name: "Uncomfortable",
+				description:
+					"Experiencing slight physical or mental discomfort.",
+			},
+			{ name: "Appalled", description: "Greatly dismayed or horrified." },
+			{ name: "Revolted", description: "Feeling disgust." },
+			{ name: "Awful", description: "Feeling very bad or unpleasant." }, // General negative, fits here
+			{
+				name: "Nauseated",
+				description:
+					"Feeling as if about to vomit; feeling sick or disgusted.",
+			},
+			{
+				name: "Detestable",
+				description: "Feeling intense dislike for something.",
+			},
+			{
+				name: "Repelled",
+				description: "Feeling driven back or away; disgusted.",
+			},
+			{
+				name: "Horrified",
+				description: "Filled with horror; extremely shocked.",
+			}, // Can overlap with Fear/Surprise
+		],
+	},
+	// Negative - Sadness / Grief
+	{
+		category: "Sad / Grieving",
+		feelings: [
+			{ name: "Sad", description: "Feeling or showing sorrow; unhappy." },
+			{
+				name: "Hurt",
+				description: "Feeling emotional pain or distress.",
+			},
+			{
+				name: "Disappointed",
+				description:
+					"Sad or displeased because someone or something has failed to fulfill one's hopes or expectations.",
+			},
+			{
+				name: "Depressed",
+				description: "Feeling severe despondency and dejection.",
+			},
+			{
+				name: "Empty",
+				description: "Feeling a lack of purpose or meaning; hollow.",
+			},
+			{
+				name: "Guilty",
+				description:
+					"Feeling responsible or regretful for a perceived offense, real or imaginary.",
+			},
+			{
+				name: "Remorseful",
+				description:
+					"Feeling deep regret or guilt for a wrong committed.",
+			},
+			{
+				name: "Ashamed",
+				description:
+					"Embarrassed or guilty because of one's actions, characteristics, or associations.",
+			},
+			{
+				name: "Despair",
+				description: "The complete loss or absence of hope.",
+			},
+			{
+				name: "Grief",
+				description:
+					"Deep sorrow, especially that caused by someone's death.",
+			},
+			{
+				name: "Embarrassed",
+				description: "Feeling awkward, self-conscious, or ashamed.",
+			},
+		],
+	},
+	// Negative - Low Energy / Disengaged
+	{
+		category: "Tired / Bored",
+		feelings: [
+			{ name: "Tired", description: "In need of sleep or rest; weary." },
+			{
+				name: "Unfocused",
+				description: "Lacking a clear aim or concentration.",
+			},
+			{ name: "Sleepy", description: "Needing or ready for sleep." },
+			{
+				name: "Bored",
+				description:
+					"Feeling weary because one is unoccupied or lacks interest in one's current activity.",
+			},
+			{
+				name: "Apathetic",
+				description:
+					"Showing or feeling no interest, enthusiasm, or concern.",
+			},
+			{
+				name: "Indifferent",
+				description:
+					"Having no particular interest or sympathy; unconcerned.",
+			},
+			{
+				name: "Numb",
+				description: "Deprived of the power of sensation or feeling.",
+			},
+		],
+	},
+	// Surprise / Confusion
+	{
+		category: "Surprised / Confused",
+		feelings: [
+			{
+				name: "Surprised",
+				description: "Feeling mild astonishment or shock.",
+			},
+			{
+				name: "Amazed",
+				description: "Feeling great surprise or wonder.",
+			},
+			{
+				name: "Awe",
+				description:
+					"A feeling of reverential respect mixed with fear or wonder.",
+			},
+			{
+				name: "Astonished",
+				description: "Greatly surprised or impressed; amazed.",
+			},
+			{
+				name: "Confused",
+				description: "Unable to think clearly; bewildered.",
+			},
+			{
+				name: "Perplexed",
+				description: "Completely baffled; very puzzled.",
+			},
+			{
+				name: "Disillusioned",
+				description:
+					"Disappointed in someone or something that one discovers to be less good than one had believed.",
+			},
+			{ name: "Startled", description: "Feeling sudden shock or alarm." },
+			{
+				name: "Dismayed",
+				description: "Feeling consternation and distress.",
+			},
+			{ name: "Shocked", description: "Feeling surprised and upset." },
+		],
+	},
+	// Other / Ambiguous
+	{
+		category: "Other / Uncertain", // Catch-all for less specific or context-dependent terms
+		feelings: [
+			{
+				name: "Hesitant",
+				description:
+					"Tentative, unsure, or slow in acting or speaking.",
+			},
+			// { name: "Bad", description: "Feeling unwell, unhappy, or unfavorable." }, // 'Bad' is very general, potentially omit or place carefully.
+			// Note: 'Aroused' could be listed under 'Engaged' or a separate 'Sensual' category but wasn't clearly positive/negative without context. Leaving out for now based on common feeling wheels.
+		],
+	},
 ];
+
+// Interface definition (assuming TypeScript)
+interface Feeling {
+	name: string;
+	description: string;
+}
+
+interface FeelingCategory {
+	category: string;
+	feelings: Feeling[];
+}

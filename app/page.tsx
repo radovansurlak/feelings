@@ -200,7 +200,7 @@ export default function Home() {
 				<>
 					<div className="card bg-base-100 p-10 mx-6 mb-6 shadow-xl flex flex-col align-center">
 						<h3 className="text-center text-xl font-normal mb-6">
-							Selected Feelings
+							Intensity of Selected Feelings
 						</h3>
 						{selectedFeelings.map((selectedFeeling) => (
 							<div
